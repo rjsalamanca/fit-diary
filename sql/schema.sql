@@ -14,7 +14,7 @@ CREATE TABLE users
 CREATE TABLE routine
 (
     id SERIAL PRIMARY KEY,
-    exercise_list VARCHAR(1000),
+    exercise_list VARCHAR(1000)
 );
 
 CREATE TABLE exercises
