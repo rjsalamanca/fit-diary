@@ -5,8 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "db create": "",
-    "db kill": "psql -f ./sql/schema.sql "
+    "db:reset": "psql fit_diary -f sql/schema.sql -U rjs && psql fit_diary -f sql/seed.sql -U rjs"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
