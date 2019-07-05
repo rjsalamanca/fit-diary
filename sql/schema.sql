@@ -1,3 +1,7 @@
+DROP TABLE exercises;
+DROP TABLE routine;
+DROP TABLE users;
+
 CREATE TABLE users
 (
     id SERIAL PRIMARY KEY,
@@ -10,5 +14,12 @@ CREATE TABLE users
 CREATE TABLE routine
 (
     id SERIAL PRIMARY KEY,
-    exercise VARCHAR(100)
+    exercise_list VARCHAR(1000),
+);
+
+CREATE TABLE exercises
+(
+    id SERIAL PRIMARY KEY,
+    exercise VARCHAR(200),
+    routine_id INT REFERENCES routine(id)
 );
