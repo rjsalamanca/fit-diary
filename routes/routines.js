@@ -11,7 +11,8 @@ router.get('/', async function (req, res, next) {
   console.log(getRoutine);
   res.render('index', {
     locals: {
-      title: 'Routines'
+      title: 'Routines',
+      routines: getRoutine
     },
     partials: {
       partial: 'partial-routines'
