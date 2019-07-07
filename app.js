@@ -6,8 +6,8 @@ const express = require('express'),
     createError = require('http-errors'),
     es6Renderer = require('express-es6-template-engine'),
     indexRouter = require('./routes/index'),
-    usersRouter = require('./routes/users');
-// gamesRouter = require('./routes/games'),
+    usersRouter = require('./routes/users'),
+    routinesRouter = require('./routes/routines');
 // scoresRouter = require('./routes/scores');
 
 const app = express();
@@ -30,7 +30,7 @@ app.use(session({
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/games',gamesRouter);
+app.use('/routines', routinesRouter);
 // app.use('/scores', scoresRouter);
 app.use(function (req, res, next) {
     next(createError(404));

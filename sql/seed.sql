@@ -2,9 +2,9 @@ INSERT INTO users
 VALUES
     (1, 'Rj', 'Salamanca', 'rj@rj.com', '1');
 
-INSERT INTO routine
+INSERT INTO routines
 VALUES
-    (1, 'Bench Press, Dumbbell Press, Chest Flies, Tricep Pull Downs');
+    (1, 'Chest Day', 'Bench Press, Dumbbell Press, Chest Flies, Tricep Pull Downs');
 
 INSERT INTO exercises
 VALUES

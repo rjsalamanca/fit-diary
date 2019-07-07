@@ -1,5 +1,5 @@
 DROP TABLE exercises;
-DROP TABLE routine;
+DROP TABLE routines;
 DROP TABLE users;
 
 CREATE TABLE users
@@ -11,9 +11,10 @@ CREATE TABLE users
     password VARCHAR(500)
 );
 
-CREATE TABLE routine
+CREATE TABLE routines
 (
     id SERIAL PRIMARY KEY,
+    routine_name VARCHAR(200),
     exercise_list VARCHAR(1000)
 );
 
@@ -21,5 +22,5 @@ CREATE TABLE exercises
 (
     id SERIAL PRIMARY KEY,
     exercise VARCHAR(200),
-    routine_id INT REFERENCES routine(id)
+    routine_id INT REFERENCES routines(id)
 );
