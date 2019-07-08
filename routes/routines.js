@@ -4,8 +4,7 @@ const express = require('express'),
 
 /* GET home page. */
 router.get('/', async function (req, res, next) {
-  const routineInstance = new RoutinesModel(1, null, null);
-  const getRoutine = await routineInstance.getRoutine();
+  const getRoutine = await RoutinesModel.getRoutine(1);
 
 
   console.log(getRoutine);

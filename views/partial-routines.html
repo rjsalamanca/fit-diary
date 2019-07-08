@@ -1,9 +1,20 @@
 <div>
     <h2>Saved Routines:</h2>
     <ul>
+        ${routines.map(routine =>
+        `
         <li>
-            <h3>${routines.routine_name}</h3>
-            <p>Exercises: ${routines.exercise_list}</p>
+            <h3>${routine.routine_name}</h3>
+            <ul>
+                ${routine.exercise_list.split(', ').map(exercise =>
+                `
+                <li>${exercise}</li>
+                `
+                ).join('')}
+            </ul>
         </li>
+        `
+        ).join('')}
+        <!-- <p>Exercises: ${routines.exercise_list}</p> -->
     </ul>
 </div>

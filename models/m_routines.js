@@ -1,17 +1,29 @@
 const db = require('./m_conn.js');
 
 class Routines {
-    constructor(id, routine_name, exercises) {
+    constructor(id, routine_name, exercises, user_id) {
         this.id = id;
         this.routine_name = routine_name;
         this.exercises = exercises;
+        this.user_id = user_id;
     }
 
-    async getRoutine() {
+    static async getRoutine(uid) {
         try {
-            const response = await db.one(`
-                SELECT * FROM routines WHERE id = $1`, [this.id]
+            const response = await db.any(`
+                SELECT * FROM routines WHERE user_id = $1`, [uid]
             );
+            return response;
+        } catch (err) {
+            return err.message;
+        }
+    }
+
+    async getExercises() {
+        try {
+            const response = await db.any(`
+            
+            `);
             return response;
         } catch (err) {
             return err.message;

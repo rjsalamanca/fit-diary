@@ -15,7 +15,8 @@ CREATE TABLE routines
 (
     id SERIAL PRIMARY KEY,
     routine_name VARCHAR(200),
-    exercise_list VARCHAR(1000)
+    exercise_list VARCHAR(1000),
+    user_id INT REFERENCES users(id)
 );
 
 CREATE TABLE exercises
